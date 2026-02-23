@@ -19,14 +19,21 @@ A critical component of this lab was the use of a **Custom NAT Network**. I inte
 ## Phase 2: Network Brute Force Simulation 
 
 ### The Attack
-I launched a brute-force dictionary attack against the `Employee` account over the network using Kali Linux.
+I launched a brute-force dictionary attack against the `Employee` account over the network using Kali Linux. 
 
-[Hydra attack.png](https://github.com/JayFerguson10/Brute-Force-Hydra/blob/main/Hydra%20attack.png?raw=true)
+<p align="center">
+  <img src="Hydra%20attack.jpg" alt="Kali Hydra Attack" width="100%">
+</p>
 
 ### The Detection
 Even though the machines were isolated, my Wazuh SIEM successfully captured the flood of network-based **Event ID 4625** (Failed Logon) alerts.
 
 By drilling down into the raw forensic data, I successfully extracted the complete footprint of the attacker:
+
+<p align="center">
+  <img src="Brute%20force%20Document%20Details.png" alt="Wazuh Brute Force Alert" width="100%">
+</p>
+
 * **Targeted Account:** `Employee`
 * **Logon Type:** `3` (Verifying a remote network connection)
 * **Source IP Address:** `10.0.2.8`
