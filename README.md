@@ -21,7 +21,7 @@ A critical component of this lab was the use of a **Custom NAT Network**. I inte
 ### The Attack
 I launched a brute-force dictionary attack against the `Employee` account over the network using Kali Linux.
 
-![Kali Hydra Attack](Hydra%20attack.jpg)
+Hydra attack.png
 
 ### The Detection
 Even though the machines were isolated, my Wazuh SIEM successfully captured the flood of network-based **Event ID 4625** (Failed Logon) alerts.
